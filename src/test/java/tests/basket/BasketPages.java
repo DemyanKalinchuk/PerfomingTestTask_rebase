@@ -29,5 +29,34 @@ public class BasketPages extends BaseTest {
 
         logger.info("Close cart ");
 
+        selectmenuitem
+                .clickmenuitem();
+
+        logger.info("Search menu item 'Ноутбуки и компьютеры' ");
+
+        selectproduct
+                .clickonproduct();
+
+        logger.info("Choose product in  'Ноутбуки' directory ");
+
+        selectnotebook
+                .clickonnotebook();
+
+        logger.info("Choose notebook ");
+
+        buynotebook
+                .clickonbuy();
+
+        logger.info("buy notebook ");
+
+        deletebuy
+                .clickonbuydelete();
+
+        logger.info("delete buy");
+
+        deletebuydone
+                .clickonbuydeletedone();
+
+        logger.info("delete buy done");
     }
 }

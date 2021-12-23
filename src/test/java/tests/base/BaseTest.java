@@ -20,6 +20,7 @@ public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
     protected SearchFunction homePage = new SearchFunction(driver);
+    //Group of register page
     protected RegisterPage registerPage = new RegisterPage(driver);
     protected RegisterPage enterEmail = new RegisterPage(driver);
     protected RegisterPage enterPass = new RegisterPage(driver);
@@ -31,10 +32,16 @@ public class BaseTest {
     protected RegisterPage inputPhone = new RegisterPage(driver);
     protected RegisterPage inputMail = new RegisterPage(driver);
     protected RegisterPage inputPass = new RegisterPage(driver);
-
+    //group of Basket
+    protected BasketPage selectmenuitem = new BasketPage(driver);
+    protected BasketPage selectproduct = new BasketPage(driver);
     protected BasketPage enterBasket = new BasketPage(driver);
-
     protected BasketPage closeBasket = new BasketPage(driver);
+    protected BasketPage selectnotebook = new BasketPage(driver);
+    protected BasketPage buynotebook = new BasketPage(driver);
+    protected BasketPage deletebuy = new BasketPage(driver);
+    protected BasketPage deletebuydone = new BasketPage(driver);
+
     protected RealtListingPage realtListingPage = new RealtListingPage(driver);
 
 
