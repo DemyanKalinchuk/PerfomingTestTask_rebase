@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" name="F:/Frame_java">
         <packages>
-            <package name="tests.registration">
+            <package name="tests.basket">
 
             </package>
         </packages>

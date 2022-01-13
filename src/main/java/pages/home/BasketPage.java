@@ -44,7 +44,7 @@ public class BasketPage extends BasePage {
         return this;
     }
 
-    private final By selectnotebook = (By.xpath("//div[@data-goods-id='323906515']"));
+    private final By selectnotebook = (By.xpath("//div[@data-goods-id='245161909']"));
 
     public BasketPage clickonnotebook() {
         driver.findElement(selectnotebook).click();
