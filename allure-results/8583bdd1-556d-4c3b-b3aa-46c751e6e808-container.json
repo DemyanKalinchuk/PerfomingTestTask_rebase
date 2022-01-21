@@ -1,0 +1,1 @@
+{"uuid":"8583bdd1-556d-4c3b-b3aa-46c751e6e808","name":"Frame_java","children":["7f7b3fda-07dc-4ce0-8dc8-6fb1ba6cc5e4"],"befores":[],"afters":[{"name":"clearCookiesAndLocalStorage","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1640274956078,"stop":1640274956308}],"start":1640274924660,"stop":1640274956314}
