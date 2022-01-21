@@ -1,66 +1,41 @@
 package tests.base;
-
-import common.CommonActions;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import pages.base.BasePage;
-import pages.home.BasketPage;
-import pages.home.SearchFunction;
-import pages.home.RegisterPage;
-import pages.listing.RealtListingPage;
+import pages.home.LoginPageGmail;
+import java.util.concurrent.TimeUnit;
 
-
-import static common.Config.CLEAR_COOKIES_AND_STORAGE;
-import static common.Config.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
-
-    protected WebDriver driver = CommonActions.createDriver();
-    protected BasePage basePage = new BasePage(driver);
-    protected SearchFunction homePage = new SearchFunction(driver);
-    //Group of register page
-    protected RegisterPage registerPage = new RegisterPage(driver);
-    protected RegisterPage enterEmail = new RegisterPage(driver);
-    protected RegisterPage enterPass = new RegisterPage(driver);
-    protected RegisterPage enterReg = new RegisterPage(driver);
-    protected RegisterPage enterRegBtn = new RegisterPage(driver);
-    protected RegisterPage enterRegBtn2 = new RegisterPage(driver);
-    protected RegisterPage inputName = new RegisterPage(driver);
-    protected RegisterPage inputLastName = new RegisterPage(driver);
-    protected RegisterPage inputPhone = new RegisterPage(driver);
-    protected RegisterPage inputMail = new RegisterPage(driver);
-    protected RegisterPage inputPass = new RegisterPage(driver);
-    //group of Basket
-    protected BasketPage selectmenuitem = new BasketPage(driver);
-    protected BasketPage selectproduct = new BasketPage(driver);
-    protected BasketPage enterBasket = new BasketPage(driver);
-    protected BasketPage closeBasket = new BasketPage(driver);
-    protected BasketPage selectnotebook = new BasketPage(driver);
-    protected BasketPage buynotebook = new BasketPage(driver);
-    protected BasketPage deletebuy = new BasketPage(driver);
-    protected BasketPage deletebuydone = new BasketPage(driver);
-
-    protected RealtListingPage realtListingPage = new RealtListingPage(driver);
-
-
-
-    @AfterTest
-    public void clearCookiesAndLocalStorage(){
-        if (CLEAR_COOKIES_AND_STORAGE){
-            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-            driver.manage().deleteAllCookies();
-            javascriptExecutor.executeScript("window.sessionStorage.clear()");
+    public static WebDriver createDriver(){
+        WebDriver driver = null;
+        {
+            System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+            driver = new ChromeDriver();
 
         }
-
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        return driver;
     }
+
+    protected WebDriver driver = BaseTest.createDriver();
+    protected BasePage basePage = new BasePage(driver);
+
+    //Group of register page
+    protected LoginPageGmail loginPageGmail = new LoginPageGmail(driver);
+    protected LoginPageGmail enterEmail = new LoginPageGmail(driver);
+    protected LoginPageGmail enterEmail1 = new LoginPageGmail(driver);
+    protected LoginPageGmail enterPass = new LoginPageGmail(driver);
+    protected LoginPageGmail enterPass1 = new LoginPageGmail(driver);
+
+
     @AfterSuite (alwaysRun = true)
     public void close(){
-        if (HOLD_BROWSER_OPEN){
-            driver.quit();
-        }
-    }
 
+        driver.quit();
+    }
 }
+
+

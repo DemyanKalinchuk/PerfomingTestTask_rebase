@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Frame_java" />
+        <module name="PerfomingTestTask_rebase1" />
+        <module name="PerfomingTestTask_rebase" />
       </profile>
     </annotationProcessing>
   </component>

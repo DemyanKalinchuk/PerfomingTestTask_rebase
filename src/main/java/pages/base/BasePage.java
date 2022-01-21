@@ -1,17 +1,8 @@
 package pages.base;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-
-
-
 import java.util.concurrent.TimeUnit;
-
-import static Constants.Constant.TimeoutWariable.EXPLICIT_WAIT;
-import static Constants.Constant.TimeoutWariable.IMPLICIT_WAIT;
-
 
 public class BasePage {
     protected WebDriver driver;
@@ -26,7 +17,7 @@ public class BasePage {
         driver.get(url);
     }
     public WebElement weitElementIsVisible(WebElement element){
-        driver.manage().timeouts().implicitlyWait(EXPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return (WebElement) driver;
     }
 
