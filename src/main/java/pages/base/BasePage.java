@@ -16,10 +16,5 @@ public class BasePage {
 
         driver.get(url);
     }
-    public WebElement weitElementIsVisible(WebElement element){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return (WebElement) driver;
-    }
-
 
 }

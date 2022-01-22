@@ -10,11 +10,11 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
     public static WebDriver createDriver(){
         WebDriver driver = null;
-        {
+
             System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
             driver = new ChromeDriver();
 
-        }
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
@@ -23,7 +23,7 @@ public class BaseTest {
     protected WebDriver driver = BaseTest.createDriver();
     protected BasePage basePage = new BasePage(driver);
 
-    //Group of register page
+    //Group of login page
     protected LoginPageGmail loginPageGmail = new LoginPageGmail(driver);
     protected LoginPageGmail enterEmail = new LoginPageGmail(driver);
     protected LoginPageGmail enterEmail1 = new LoginPageGmail(driver);
